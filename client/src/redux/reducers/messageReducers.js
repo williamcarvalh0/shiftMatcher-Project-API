@@ -2,12 +2,12 @@ import {
   SHOW_ERROR_MESSAGE,
   SHOW_SUCCESS_MESSAGE,
   CLEAR_MESSAGES,
-} from '../constants/messageConstants'
+} from "../constants/messageConstants";
 
 const INITIAL_STATE = {
-  successMsg: '',
-  errorMsg: '',
-}
+  successMsg: "",
+  errorMsg: "",
+};
 
 const messageReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -15,20 +15,20 @@ const messageReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         successMsg: action.payload,
-      }
-    case SHOW_ERROR_MESSAGE:
-      return {
-        ...state,
-        errorMsg: action.payload,
-      }
-    case CLEAR_MESSAGES:
+      };
+      case SHOW_ERROR_MESSAGE:
+        return {
+          ...state,
+          errorMsg: action.payload,
+        };
+        case CLEAR_MESSAGES:
       return {
         successMsg: '',
-        errorMsg: '',
-      }
+        errorMsg: ''
+      };
     default:
       return state
   }
-}
+};
 
-export default messageReducer
+export default messageReducer;

@@ -30,7 +30,14 @@ const EmployerJobModal = () => {
     jobQty: '',
   })
 
-  const { jobImage, jobName, jobDesc, jobPrice, jobCategory, jobQty } = jobData
+  const {
+    jobImage,
+    jobName,
+    jobDesc,
+    jobPrice,
+    jobCategory,
+    jobQty,
+  } = jobData
 
   /**********************
    * EVENT HANDLERS
@@ -60,7 +67,11 @@ const EmployerJobModal = () => {
 
     if (jobImage === null) {
       setEmployeeSideError('Please select an image')
-    } else if (isEmpty(jobName) || isEmpty(jobDesc) || isEmpty(jobPrice)) {
+    } else if (
+      isEmpty(jobName) ||
+      isEmpty(jobDesc) ||
+      isEmpty(jobPrice)
+    ) {
       setEmployeeSideError('All field are required')
     } else if (isEmpty(jobCategory)) {
       setEmployeeSideError('Please select a category')

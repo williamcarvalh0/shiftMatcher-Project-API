@@ -1,7 +1,7 @@
 {
-  "name": "shiftmatcher-project-api",
+  "name": "shiftMatcher",
   "version": "1.0.0",
-  "description": "Full API MERN",
+  "description": "Full crud api",
   "main": "server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -13,35 +13,26 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "concurrently": "^6.2.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-validator": "^6.12.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.5",
-    "morgan": "^1.10.0",
+    "mongoose": "^5.13.3",
     "multer": "^1.4.2",
     "nodemon": "^2.0.12",
     "react-redux": "^7.2.4",
-    "redux": "^4.1.1",
+    "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
     "validator": "^13.6.0"
   },
-  "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "morgan": "^1.10.0"
   },
-  "externals": {
-    "react": {
-      "commonjs": "react",
-      "commonjs2": "react"
-    },
-    "react-dom": {
-      "commonjs": "react-dom",
-      "commonjs2": "react-dom"
-    }
+  "engines": {
+    "node": ">=10.0.0"
   }
 }

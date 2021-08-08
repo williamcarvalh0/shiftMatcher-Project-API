@@ -15,19 +15,10 @@ const Header = ({ history }) => {
    **************/
   const showNavigation = () => (
     <nav className='navbar navbar-expand-lg navbar-light py-4'>
-      <div className='container-fluid'>
-        <img
-          src={logo}
-          width='100'
-          height='100'
-          class='d-inline-block align-top'
-          alt=''
-        />
-        <Link
-          to='/'
-          className='navbar-brand my-md-3 mr-auto text-secondary site-title'
-        >
-            ShiftMatcher
+            <div className='container-fluid'>
+            <img src={logo} width="100" height="100" className="d-inline-block align-top" alt=""/>
+        <Link to='/' className='navbar-brand my-md-3 mr-auto text-secondary site-title' >
+          ShiftMatcher          
         </Link>
         <button
           className='navbar-toggler'
@@ -69,11 +60,10 @@ const Header = ({ history }) => {
 
             {isAuthenticated() && isAuthenticated().role === 'Employer' && (
               <Fragment>
-                <p class='nav-item p-2'>Welcome</p>
-                <li class='nav-item dropdown mr-5'>
-                  <a
-                    class='nav-link dropdown-toggle'
-                    href='#'
+                <p className='nav-item p-2'>Welcome</p> 
+                <li className='nav-item dropdown mr-5'>                                
+                  <p
+                    className='nav-link dropdown-toggle'
                     id='navbarDropdown'
                     role='button'
                     data-toggle='dropdown'
@@ -81,20 +71,20 @@ const Header = ({ history }) => {
                     aria-expanded='false'
                   >
                     Username
-                  </a>
-                  <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                    <a class='dropdown-item'>
-                      <Link to='/employer/dashboard' className='nav-link'>
-                        <i class='fas fa-home'></i> Dashboard
-                      </Link>
-                    </a>
-                    <a class='dropdown-item' href='#'>
-                      <Link to='/employer/profile' className='nav-link'>
-                        <i class='fas fa-user'></i>  Profile
-                      </Link>
-                    </a>
-                    <div class='dropdown-divider'></div>
-                    <a class='dropdown-item' href='#'>
+                  </p>
+                  <div className='dropdown-menu' aria-labelledby='navbarDropdown'>
+                    <p className='dropdown-item'>
+                    <Link to="/employer/dashboard" className="nav-link">
+                     <i className='fas fa-home'></i> Dashboard
+                     </Link>
+                    </p>
+                    <p className='dropdown-item' href='#'>
+                    <Link to="/employer/profile" className="nav-link"> 
+                    <i className='fas fa-user'></i>  Profile
+                    </Link>
+                    </p>
+                    <div className='dropdown-divider'></div>
+                    <p className='dropdown-item' href='#'>
                       {isAuthenticated() && (
                         <Fragment>
                           <li className='nav-item'>
@@ -107,7 +97,7 @@ const Header = ({ history }) => {
                           </li>
                         </Fragment>
                       )}
-                    </a>
+                    </p>
                   </div>
                 </li>
               </Fragment>

@@ -7,7 +7,6 @@ import { showErrorMsg, showSuccessMsg } from '../helpers/message'
 import { showLoading } from '../helpers/loading'
 import { signin, signup } from '../api/auth'
 import { setAuthentication, isAuthenticated } from '../helpers/auth'
-import '../assets/css/App.css'
 
 const Signin = () => {
   let history = useHistory()
@@ -21,10 +20,10 @@ const Signin = () => {
   }, [history])
 
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-    password2: '',
+    username: "",
+    email: "",
+    password: "",
+    password2: "",
     successMsg: false,
     errorMsg: false,
     loading: false,
@@ -220,18 +219,18 @@ const Signin = () => {
       </button>
       <p className='social-text'>Or Sign in with social platforms</p>
       <div className='social-media-main'>
-        <p className='social-icon-main'>
+        <a href="#!" className='social-icon-main'>
           <i className='fab fa-facebook-f'></i>
-        </p>
-        <p className='social-icon-main'>
+        </a>
+        <a href="#!" className='social-icon-main'>
           <i className='fab fa-twitter'></i>
-        </p>
-        <p className='social-icon-main'>
+        </a>
+        <a href="#!" className='social-icon-main'>
           <i className='fab fa-google'></i>
-        </p>
-        <p className='social-icon-main'>
+        </a>
+        <a href="#!"className='social-icon-main'>
           <i className='fab fa-linkedin-in'></i>
-        </p>
+        </a>
       </div>
     </form>
   )
@@ -297,18 +296,18 @@ const Signin = () => {
       </button>
       <p className='social-text'>Or Sign up with social platforms</p>
       <div className='social-media-main'>
-        <p className='social-icon-main'>
+        <a href="#!" className='social-icon-main'>
           <i className='fab fa-facebook-f'></i>
-        </p>
-        <p className='social-icon-main'>
+        </a>
+        <a href="#!" className='social-icon-main'>
           <i className='fab fa-twitter'></i>
-        </p>
-        <p className='social-icon-main'>
+        </a>
+        <a href="#!" className='social-icon-main'>
           <i className='fab fa-google'></i>
-        </p>
-        <p className='social-icon-main'>
+        </a>
+        <a href="#!" className='social-icon-main'>
           <i className='fab fa-linkedin-in'></i>
-        </p>
+        </a>
       </div>
     </form>
   )
@@ -325,7 +324,7 @@ const Signin = () => {
             Sign up
           </button>
         </div>
-        <img src='/images/log.svg' className='image' alt='' />
+        <img src='' className='image' alt='' />
       </div>
       <div className='panel-main right-panel-main'>
         <div className='content-main'>
@@ -338,7 +337,7 @@ const Signin = () => {
             Sign in
           </button>
         </div>
-        <img src='/images/register.svg' className='image' alt='' />
+        <img src='' className='image' alt='' />
       </div>
     </>
   )

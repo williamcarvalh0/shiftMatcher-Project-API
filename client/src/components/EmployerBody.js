@@ -11,7 +11,10 @@ const EmployerBody = () => {
     <div className='container'>
       <div className='row'>
         <div className='card-deck'>
-          {jobs && jobs.map((job) => <Card key={job._id} job={job} />)}
+          {jobs &&
+            jobs.map((job) => (
+              <Card key={job._id} job={job} />
+            ))}
         </div>
       </div>
     </div>

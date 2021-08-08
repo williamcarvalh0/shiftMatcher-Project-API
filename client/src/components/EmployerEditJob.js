@@ -66,7 +66,7 @@ const EmployerEditJob = ({ match, history }) => {
     formData.append('jobQty', jobQty)
 
     const config = {
-      headers: {
+      headers: { 
         'Content-Type': 'multipart/form-data',
       },
     }
