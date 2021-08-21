@@ -11,6 +11,7 @@ import EmployerRoute from './EmployerRoute'
 import EmployeeRoute from './EmployeeRoute'
 import EmployerEditJob from './EmployerEditJob'
 import EmployerProfile from './EmployerProfile'
+import EmployeeProfile from './EmployeeProfile'
 
 const App = () => {
   return (
@@ -24,6 +25,11 @@ const App = () => {
             exact
             path='/employee/dashboard'
             component={EmployeeDashboard}
+          />
+          <EmployeeRoute
+            exact
+            path='/employee/profile'
+            component={EmployeeProfile}
           />
           <EmployerRoute
             exact

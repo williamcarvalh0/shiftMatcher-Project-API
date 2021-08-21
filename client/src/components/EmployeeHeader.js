@@ -6,12 +6,12 @@ const showHeader = () => (
       <div className='row'>
         <div className='col-md-6'>
           <h1>
-            <i className='fas fa-home'> Employer Dashboard</i>
+            <i className='fas fa-home'> Employee Dashboard</i>
           </h1>
         </div>
       </div>
     </div>
-  </div> 
+  </div>
 )
 
 export default showHeader

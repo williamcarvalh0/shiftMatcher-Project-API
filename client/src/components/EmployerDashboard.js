@@ -30,6 +30,6 @@ const EmployerDashboard = () => {
       <EmployerBody />
     </section>
   )
-}
+}  
 
-export default EmployerDashboard
+export default EmployerDashboard 

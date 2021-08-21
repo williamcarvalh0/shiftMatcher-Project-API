@@ -82,3 +82,33 @@ exports.signinController = async (req, res) => {
     });
   }
 };
+
+exports.read = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const user = await user.findById(userId);
+
+    res.json(user);
+  } catch (err) {
+    console.log(err, "userController.read error");
+    res.status(500).json({
+      errorMessage: "Please try again later",
+    });
+  }
+};
+
+exports.readAll = async (req, res) => {
+  try {
+    const users = await user.find({}).populate(
+      "userCategory",
+      "category"
+    );
+
+    res.json({ users });
+  } catch (err) {
+    console.log(err, "userController.readAll error");
+    res.status(500).json({
+      errorMessage: "Please try again later",
+    });
+  }
+};

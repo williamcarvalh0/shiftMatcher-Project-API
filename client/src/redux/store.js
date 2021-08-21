@@ -5,12 +5,14 @@ import loadingReducer from "./reducers/loadingReducers";
 import messageReducer from "./reducers/messageReducers";
 import categoryReducer from "./reducers/categoryReducers";
 import jobReducer from "./reducers/jobReducers";
+import userReducer from "./reducers/userReducers";
 
 const reducer = combineReducers({
   loading: loadingReducer,
   messages: messageReducer,
   categories: categoryReducer,
   jobs: jobReducer,
+  users: userReducer
 });
 
 const initialState = {};
