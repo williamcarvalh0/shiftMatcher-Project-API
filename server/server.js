@@ -22,7 +22,11 @@ app.use('/api/job', jobRoutes);
 app.use('/server/images', express.static('server/images'));
 
 // Setting config file
-dotenv.config({ path: "server/config/config.env" });
+if (process.env.NODE_ENV !== 'PRODUCTION') {
+  require('dotenv').config({ path: 'server/config/config.env' })
+} else {
+  dotenv.config({ path: 'server/config/config.env' })
+}
 
 // Connection database
 connectDB();

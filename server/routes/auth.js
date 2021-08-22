@@ -11,3 +11,4 @@ router.get("/", userController.readAll);
 router.get("/:userId", userController.read);
 
 module.exports = router;
+ 

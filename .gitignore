@@ -2,7 +2,8 @@
 
 # dependencies
 /node_modules
-/server/config
+/client/node_modules
+/server/config/config.env
 /.pnp
 .pnp.js
 
@@ -15,10 +16,10 @@
 # misc
 .DS_Store
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+/clienct/.env.local
+/clienct/.env.development.local
+/clienct/.env.test.local
+/clienct/.env.production.local
 
 npm-debug.log*
 yarn-debug.log*

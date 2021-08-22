@@ -13,7 +13,7 @@ router.post(
 
 router.get("/", jobController.readAll);
 
-router.get("/:jobId", jobController.read);
+router.get("/:jobId", jobController.read); 
 router.put("/:jobId", authenticateJWT, upload.single("jobImage"), jobController.update);
 router.delete("/:jobId", authenticateJWT, jobController.delete);
 
