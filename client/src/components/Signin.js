@@ -24,18 +24,18 @@ const Signin = () => {
     email: '',
     password: '',
     password2: '',
-    role: '',
     successMsg: false,
     errorMsg: false,
     loading: false,
   })
+
+  const [role, setRole] = useState(null)
 
   const {
     username,
     email,
     password,
     password2,
-    role,
     successMsg,
     errorMsg,
     loading,
@@ -108,7 +108,8 @@ const Signin = () => {
       isEmpty(username) ||
       isEmpty(email) ||
       isEmpty(password) ||
-      isEmpty(password2)
+      isEmpty(password2) ||
+      isEmpty(role)
     ) {
       setFormData({
         ...formData,
@@ -126,7 +127,7 @@ const Signin = () => {
       })
     } else {
       // Success
-      const { username, email, password, role } = formData
+      const { username, email, password } = formData
       const data = { username, email, password, role }
 
       setFormData({
@@ -142,10 +143,10 @@ const Signin = () => {
             email: '',
             password: '',
             password2: '',
-            role: '',
             loading: false,
             successMsg: response.data.successMessage,
           })
+          setRole(null)
         })
         .catch((err) => {
           console.log('Axios signup error: ', err)
@@ -294,14 +295,15 @@ const Signin = () => {
       {/* role */}
       <div className='input-field-main'>
         <i className='fas fa-user-tag'></i>
-        <select>
-          <option value=''>Select Role</option>
-          <option name='name' value={role} onSelect={handleChange}>
-            Employer
-          </option>
-          <option name='name' value={role} onSelect={handleChange}>
-            Employee
-          </option>
+        <select 
+        value={role}
+          onChange={(e) => {
+            setRole(e.target.value)
+          }}
+        >
+          <option>Select role</option>
+          <option name='role' value='Employer'>Employee</option>
+          <option name='role' value='Employer'>Employer</option>
         </select>
       </div>
       {/* message */}

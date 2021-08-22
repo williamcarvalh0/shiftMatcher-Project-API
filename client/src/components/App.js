@@ -43,7 +43,7 @@ const App = () => {
           />
           <EmployerRoute
             exact
-            path='/employer/profile/:userId'
+            path='/employer/profile/auth/:userId'
             component={Profile}
           />
           <Route component={NotFound} />

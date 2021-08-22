@@ -4,13 +4,14 @@ import { isAuthenticated, logout } from '../helpers/auth'
 import logo from '../assets/images/ShiftMatcher.jpeg'
 import { useSelector, useDispatch, } from 'react-redux'
 import { getUser } from '../redux/actions/userActions'
+import { getLocalStorage} from '../helpers/localStorage'
 
 
 const Header = ({ history, match }) => {
  /****************************
    * PARAMS
    ***************************/
-  const userId = match.params.userId
+  const userId = getLocalStorage(match.params.userId)
 
      /****************************
    * REDUX GLOBAL STATE PROPERTIES 
@@ -91,8 +92,11 @@ const Header = ({ history, match }) => {
                     data-toggle='dropdown'
                     aria-haspopup='true'
                     aria-expanded='false'
-                  >                    
-                        UserName             
+                  >  <>                  
+                         {user && user.username && (
+         <> {user.username}</>
+          )}  
+          </>         
                   </p>
                   <div
                     className='dropdown-menu'
@@ -151,7 +155,7 @@ const Header = ({ history, match }) => {
                       </Link>
                     </p>
                     <p className='dropdown-item' href='#'>
-                      <Link to='/employer/profile' className='nav-link'>
+                    <Link to={`/employer/profile/auth/${userId}`} className='nav-link'>
                         <i className='fas fa-user'></i>  Profile
                       </Link>
                     </p>
