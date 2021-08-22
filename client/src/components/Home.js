@@ -7,16 +7,16 @@ const Home = () => (
       <h1 className='display-3 text-center mr-auto text-secondary'>Welcome to ShiftMatcher</h1>
       
       
-      <div class='text-center'>
+      <div className='text-center'>
         <img src={logo} className='img-fluid rounded mx-auto d-block p-2' alt='' />
       </div>
 
-      <blockquote class='blockquote text-center p-5'>
-        <p class='mb-0'>
+      <blockquote className='blockquote text-center p-5'>
+        <p className='mb-0'>
         We’re here to make hiring a little easier. Let’s give it a try.
         
         </p>
-        <footer class='blockquote-footer'>
+        <footer className='blockquote-footer'>
           William Carvalho <cite title='Source Title'>ShiftMatcher CEO</cite>
         </footer>
       </blockquote>

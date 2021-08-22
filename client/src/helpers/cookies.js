@@ -10,4 +10,4 @@ export const getCookie = key => {
 
 export const deleteCookie = key => {
     return Cookies.remove(key);
-}
+} 

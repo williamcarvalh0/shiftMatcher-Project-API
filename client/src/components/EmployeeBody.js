@@ -18,7 +18,7 @@ const EmployeeBody = () => {
         </div>
       </div>
     </div>
-  )
+  ) 
 }
 
 export default EmployeeBody

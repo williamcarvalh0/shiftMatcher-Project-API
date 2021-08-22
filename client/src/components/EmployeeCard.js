@@ -1,10 +1,7 @@
-import React from 'react'
-
-// Redux
-import { useDispatch } from 'react-redux'
+import React, { useState } from 'react'
 
 const EmployeeCard = ({ job }) => {
-  const dispatch = useDispatch()
+  
 
   return (
     <div className='col-md-4 my-3'>
@@ -39,7 +36,7 @@ const EmployeeCard = ({ job }) => {
           </p>
 
           {job.jobQty > 0 ? (
-            <button type='button' className='btn btn-info btn-sm'>
+            <button type='button' className='btn btn-info btn-sm' >
               Apply
             </button>
           ) : (

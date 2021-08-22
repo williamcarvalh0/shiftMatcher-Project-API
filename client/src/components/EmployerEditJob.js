@@ -20,7 +20,7 @@ const EmployerEditJob = ({ match, history }) => {
   const { categories } = useSelector((state) => state.categories)
 
   /****************************
-   * COMPONENT STATE PROPERTIES
+   * COMPONENT STATE PROPERTIES 
    ***************************/
   const [jobImage, setJobImage] = useState(null)
   const [jobName, setJobName] = useState('')

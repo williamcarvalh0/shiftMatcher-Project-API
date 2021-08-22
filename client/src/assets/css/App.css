@@ -109,6 +109,16 @@ form.sign-in-form-main {
   color: #65736A;
 }
 
+.input-field-main select {
+  background: none;
+  outline: none;
+  border: none; 
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #65736A;
+}
+
 .input-field-maininput::placeholder {
   color: #aaa;
   font-weight: 500;
@@ -443,3 +453,6 @@ form.sign-in-form-main {
     font-size: 2.5vw;
   }
 }
+
+
+

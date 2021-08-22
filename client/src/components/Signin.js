@@ -20,10 +20,11 @@ const Signin = () => {
   }, [history])
 
   const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    password2: "",
+    username: '',
+    email: '',
+    password: '',
+    password2: '',
+    role: '',
     successMsg: false,
     errorMsg: false,
     loading: false,
@@ -34,6 +35,7 @@ const Signin = () => {
     email,
     password,
     password2,
+    role,
     successMsg,
     errorMsg,
     loading,
@@ -124,8 +126,8 @@ const Signin = () => {
       })
     } else {
       // Success
-      const { username, email, password } = formData
-      const data = { username, email, password }
+      const { username, email, password, role } = formData
+      const data = { username, email, password, role }
 
       setFormData({
         ...formData,
@@ -140,6 +142,7 @@ const Signin = () => {
             email: '',
             password: '',
             password2: '',
+            role: '',
             loading: false,
             successMsg: response.data.successMessage,
           })
@@ -179,9 +182,11 @@ const Signin = () => {
       email: '',
       password: '',
       password2: '',
+      role: '',
       loading: false,
     })
   }
+
   /***************
    * VIEWS
    **************/
@@ -219,16 +224,16 @@ const Signin = () => {
       </button>
       <p className='social-text'>Or Sign in with social platforms</p>
       <div className='social-media-main'>
-        <a href="#!" className='social-icon-main'>
+        <a href='#!' className='social-icon-main'>
           <i className='fab fa-facebook-f'></i>
         </a>
-        <a href="#!" className='social-icon-main'>
+        <a href='#!' className='social-icon-main'>
           <i className='fab fa-twitter'></i>
         </a>
-        <a href="#!" className='social-icon-main'>
+        <a href='#!' className='social-icon-main'>
           <i className='fab fa-google'></i>
         </a>
-        <a href="#!"className='social-icon-main'>
+        <a href='#!' className='social-icon-main'>
           <i className='fab fa-linkedin-in'></i>
         </a>
       </div>
@@ -286,6 +291,19 @@ const Signin = () => {
           onChange={handleChange}
         />
       </div>
+      {/* role */}
+      <div className='input-field-main'>
+        <i className='fas fa-user-tag'></i>
+        <select>
+          <option value=''>Select Role</option>
+          <option name='name' value={role} onSelect={handleChange}>
+            Employer
+          </option>
+          <option name='name' value={role} onSelect={handleChange}>
+            Employee
+          </option>
+        </select>
+      </div>
       {/* message */}
       {successMsg && showSuccessMsg(successMsg)}
       {errorMsg && showErrorMsg(errorMsg)}
@@ -296,16 +314,16 @@ const Signin = () => {
       </button>
       <p className='social-text'>Or Sign up with social platforms</p>
       <div className='social-media-main'>
-        <a href="#!" className='social-icon-main'>
+        <a href='#!' className='social-icon-main'>
           <i className='fab fa-facebook-f'></i>
         </a>
-        <a href="#!" className='social-icon-main'>
+        <a href='#!' className='social-icon-main'>
           <i className='fab fa-twitter'></i>
         </a>
-        <a href="#!" className='social-icon-main'>
+        <a href='#!' className='social-icon-main'>
           <i className='fab fa-google'></i>
         </a>
-        <a href="#!" className='social-icon-main'>
+        <a href='#!' className='social-icon-main'>
           <i className='fab fa-linkedin-in'></i>
         </a>
       </div>

@@ -18,7 +18,7 @@ const EmployerDashboard = () => {
     dispatch(getCategories())
   }, [dispatch])
   useEffect(() => {
-    dispatch(getJobs())
+    dispatch(getJobs()) 
   }, [dispatch])
 
   return (

@@ -1,18 +1,38 @@
-import React, { Fragment } from 'react'
+import React, {  useState, useEffect, Fragment } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { isAuthenticated, logout } from '../helpers/auth'
 import logo from '../assets/images/ShiftMatcher.jpeg'
+import { useSelector, useDispatch, } from 'react-redux'
+import { getUser } from '../redux/actions/userActions'
 
-// Redux
-import { useSelector } from 'react-redux'
-const Header = ({ history }) => {
-  const { users } = useSelector((state) => state.users)
+
+const Header = ({ history, match }) => {
+ /****************************
+   * PARAMS
+   ***************************/
+  const userId = match.params.userId
+
+     /****************************
+   * REDUX GLOBAL STATE PROPERTIES 
+   ***************************/
+      const dispatch = useDispatch()
+      const { user } = useSelector((state) => state.users)
+      
 
   const handleLogout = (evt) => {
     logout(() => {
       history.push('/signin')
     })
   }
+
+     /****************************
+   * LIFECYCLE METHODS
+   ***************************/
+      useEffect(() => {
+        dispatch(getUser(userId))
+       
+      }, [dispatch, userId, user])
+
 
   /***************
    * VIEWS
@@ -63,7 +83,6 @@ const Header = ({ history }) => {
 
             {isAuthenticated() && isAuthenticated().role === 'Employee' && (
               <Fragment>
-                <p className='nav-item p-2'>Welcome</p>
                 <li className='nav-item dropdown mr-5'>
                   <p
                     className='nav-link dropdown-toggle'
@@ -72,8 +91,8 @@ const Header = ({ history }) => {
                     data-toggle='dropdown'
                     aria-haspopup='true'
                     aria-expanded='false'
-                  >
-                    Username
+                  >                    
+                        UserName             
                   </p>
                   <div
                     className='dropdown-menu'
@@ -85,7 +104,7 @@ const Header = ({ history }) => {
                       </Link>
                     </p>
                     <p className='dropdown-item' href='#'>
-                      <Link to='/employee/profile' className='nav-link'>
+                      <Link to={`/employee/profile/auth/${userId}`} className='nav-link'>
                         <i className='fas fa-user'></i>  Profile
                       </Link>
                     </p>
@@ -111,7 +130,6 @@ const Header = ({ history }) => {
 
             {isAuthenticated() && isAuthenticated().role === 'Employer' && (
               <Fragment>
-                <p className='nav-item p-2'>Welcome</p>
                 <li className='nav-item dropdown mr-5'>
                   <p
                     className='nav-link dropdown-toggle'

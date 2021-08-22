@@ -11,7 +11,7 @@ import EmployerRoute from './EmployerRoute'
 import EmployeeRoute from './EmployeeRoute'
 import EmployerEditJob from './EmployerEditJob'
 import EmployerProfile from './EmployerProfile'
-import EmployeeProfile from './EmployeeProfile'
+import Profile from './Profile'
 
 const App = () => {
   return (
@@ -28,8 +28,8 @@ const App = () => {
           />
           <EmployeeRoute
             exact
-            path='/employee/profile'
-            component={EmployeeProfile}
+            path='/employee/profile/auth/:userId'
+            component={Profile}
           />
           <EmployerRoute
             exact
@@ -43,8 +43,8 @@ const App = () => {
           />
           <EmployerRoute
             exact
-            path='/employer/profile'
-            component={EmployerProfile}
+            path='/employer/profile/:userId'
+            component={Profile}
           />
           <Route component={NotFound} />
         </Switch>

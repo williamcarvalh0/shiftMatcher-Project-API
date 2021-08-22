@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { jwtSecret, jwtExpire } = require("../config/keys");
 
+
 exports.signupController = async (req, res) => {
   const { username, email, password } = req.body;
 
@@ -68,7 +69,7 @@ exports.signinController = async (req, res) => {
       res.json({
         token,
         user: {
-          _id,
+          _id, 
           username,
           email,
           role,
@@ -86,7 +87,7 @@ exports.signinController = async (req, res) => {
 exports.read = async (req, res) => {
   try {
     const userId = req.params.userId;
-    const user = await user.findById(userId);
+    const user = await User.findById(userId);
 
     res.json(user);
   } catch (err) {
